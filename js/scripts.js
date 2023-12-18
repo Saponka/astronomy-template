@@ -52,3 +52,48 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+//fecha
+
+
+const fecha= new Date().getDate();
+const año = new Date().getFullYear();
+
+/* function diasEnString (){
+    let dias =["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
+    const day = new Date().getDay();
+    return dias[day]
+}; */
+function diasEnStringIngles (){
+    let dias =["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const day = new Date().getDay();
+    return dias[day]
+};
+
+function month(){
+    let meses =["January","February"," March","April","May","June","July","August","September","October","November","December"];
+    const mes = new Date().getMonth();
+    
+    return meses[mes]
+};
+/* function meses(){
+    let meses =["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    const mes = new Date().getMonth();
+    
+    return meses[mes]
+}; */
+
+//DOM
+const date = document.getElementById("date");
+const day = document.getElementById("day");
+const months = document.getElementById("month");
+const year = document.querySelectorAll(".year");
+
+date.innerText = fecha;
+day.innerText = diasEnStringIngles();
+months.innerText = month();
+//year.innerText = año;
+
+year.forEach(element => {
+    element.innerText = año;
+});
